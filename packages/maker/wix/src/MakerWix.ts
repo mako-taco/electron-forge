@@ -18,7 +18,7 @@ export default class MakerWix extends MakerBase<MakerWixConfig> {
   }
 
   async make({ dir, makeDir, targetArch, packageJSON, appName }: MakerOptions) {
-    const outPath = path.resolve(makeDir, `/wix/${targetArch}`);
+    const outPath = path.resolve(makeDir, `./wix/${targetArch}`);
     await this.ensureDirectory(outPath);
 
     const creator = new MSICreator(Object.assign(
